@@ -1,0 +1,83 @@
+@import "../../stylesheets/base";
+
+
+.video-js {
+  background: none;
+}
+
+.MiniChart {
+  margin-top: 20px;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.20);
+
+  #miniVideoMap {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@include susy-breakpoint($tablet) {
+  .MiniChart {
+    margin: 0;
+    box-shadow: none;
+    -webkit-transition: height .8s ease-in-out;
+    -moz-transition: height .8s ease-in-out;
+    -o-transition: height .8s ease-in-out;
+    -ms-transition: height .8s ease-in-out;
+    transition: height .8s ease-in-out;
+
+    @keyframes fadein {
+      0% {
+        opacity: 1;
+      }
+      44% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      79% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+
+    .video-js {
+      background: none;
+    }
+
+    #miniVideoMap {
+      width: 100%;
+      height: auto;
+    }
+
+    &.active {
+      animation-name: fadein;
+      animation-duration: 1s;
+      opacity: 1;
+
+      @include susy-breakpoint($tablet) {
+        height: 120px;
+      }
+
+      @include susy-breakpoint(900px) {
+        height: 160px;
+      }
+
+      @include susy-breakpoint($desktop) {
+        height: 210px;
+      }
+
+      video {
+        height: auto;
+      }
+
+    }
+  }
+}
+

@@ -1,0 +1,33 @@
+@include susy-breakpoint($desktop) {
+  .grid {
+    @include container();
+
+    .row {
+      @include container();
+    }
+
+    .col {
+      padding: 48px 0;
+
+      &.col-3-12 {
+        @include span (3);
+      }
+
+      &.col-4-12 {
+        @include span (4);
+      }
+
+      &.col-8-12 {
+        @include span (8);
+      }
+
+      &.col-9-12 {
+        @include span (9);
+      }
+
+      &:last-child {
+        @include last;
+      }
+    }
+  }
+}

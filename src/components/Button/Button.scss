@@ -1,0 +1,21 @@
+.Button {
+  display: inline-block;
+  border: none;
+  background: #410095;
+  color: white;
+  font-size: 14px;
+  padding: 12px 47px;
+  font-weight: 400;
+
+  &:hover {
+    cursor: pointer;
+    background: #30006f;
+    color: #d5d1df;
+  }
+
+  &.default {
+    background: #ced5d6;
+    color: #222222;
+  }
+
+}

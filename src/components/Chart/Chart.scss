@@ -1,0 +1,105 @@
+@import "../../stylesheets/base";
+@import "../../../node_modules/video.js/dist/video-js.css";
+
+.Chart {
+  display: none;
+}
+
+@include susy-breakpoint($tablet) {
+  .map {
+    -webkit-transition: all .8s ease-in-out;
+    -moz-transition: all .8s ease-in-out;
+    -o-transition: all .8s ease-in-out;
+    -ms-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out;
+
+    position: fixed;
+    background: none;
+    width: 100%;
+
+    .map-wrapper {
+      // Acts like the main container
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1169px;
+      position: relative;
+    }
+
+    .video-js {
+      background: none;
+    }
+
+    .Chart {
+      display: block;
+      -webkit-transition: all .8s ease-in-out;
+      -moz-transition: all .8s ease-in-out;
+      -o-transition: all .8s ease-in-out;
+      -ms-transition: all .8s ease-in-out;
+      transition: all .8s ease-in-out;
+
+
+      position: absolute;
+      top: 0;
+      right: 16px;
+
+      // Initial Width
+      width: 73%;
+
+
+      // Initial Positioning
+      top: 80px;
+
+
+      #mainVideoMap{
+        width: 100%;
+        height: auto;
+      }
+
+      video {
+        height: auto;
+      }
+
+      @include susy-breakpoint($desktop) {
+        right: 0;
+      }
+
+
+    }
+
+    &.active {
+      z-index: -1111;
+
+      .Chart {
+        visibility: hidden;
+        height: 0;
+        right: 77.5%;
+        width: 20%;
+
+        @include susy-breakpoint($desktop) {
+          right: 876px;
+          width: 25%;
+        }
+      }
+    }
+  }
+}
+
+
+.no-content {
+  
+  .Chart {
+    visibility: hidden;
+    height: 0;
+    right: 77.5%;
+    width: 20%;
+  }
+  .placeholder-chart {
+    display: none;
+  }
+}
+
+.map-container {
+  margin-top: 33px;
+  margin-bottom: 33px;
+  margin-left: 10px;
+}

@@ -1,0 +1,195 @@
+@import "../../stylesheets/base";
+
+.Greeter {
+
+  .fadeOut-leave {
+    opacity: 1;
+  }
+
+  .fadeOut-leave.fadeOut-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+  }
+
+  &-content {
+    position: fixed;
+    top:0;
+    right:0;
+    left: 0;
+    bottom: 0;
+    height:100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+
+    @include susy-breakpoint($tablet) {
+      display: block
+    }
+
+    .Greeter-box {
+      background: #c9cfd6;
+      color: #34383d;
+      width: 100%;
+      position: absolute;
+      z-index: 101;
+      background-size: 650px 600px;
+      background-position: 115%;
+      background-repeat: no-repeat;
+      height:100%;
+      height: 600px;
+
+      @include susy-breakpoint($tablet) {
+        background-image: url('../../assets/images/map-greeter.png');
+        background-position: 325%;
+      }
+
+      @include susy-breakpoint($desktop) {
+        background-position: 115%;
+      }
+
+
+      .Greeter-container {
+        box-sizing: border-box;
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        text-align: left;
+        padding: 15px;
+
+        @include susy-breakpoint($tablet) {
+          max-width: 900px;
+          margin: 0 auto;
+          text-align: left;
+
+          width: 60%;
+          margin: auto;
+
+          top: 50%;
+          left: 36%;
+          -webkit-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+
+        }
+
+        @include susy-breakpoint($desktop) {
+          left: 45%;
+        }
+
+
+        h3 {
+          margin-bottom: 10px;
+          @include susy-breakpoint($tablet) {
+            font-weight: bold;
+            font-size: 20px;
+            color: #2b007a;
+            margin-bottom: 20px;
+          }
+
+        }
+
+        h1 {
+          font-size: 32px;
+        }
+
+        p {
+          margin: 4% 0;
+          width: 100%;
+          font-size: 13px;
+
+          @include susy-breakpoint($tablet) {
+            margin: 18px 0;
+            width: 400px;
+          }
+        }
+
+        ul {
+          width: 100%;
+          @include susy-breakpoint($tablet) {
+            margin-left: 20px;
+            width: 400px;
+          }
+          li {
+            font-weight: bold;
+            font-size: 12px;
+            margin: 5px 0;
+            text-indent:-9px;
+
+            @include susy-breakpoint($tablet) {
+              margin: 14px 0;
+              font-size: 15px;
+            }
+          }
+        }
+
+        .logo, .title {
+          display: none;
+          @include susy-breakpoint($tablet) {
+            display: block;
+          }
+        }
+
+        .presents {
+          display: inline;
+          color: #2b007a;
+          font-size: 10px;
+          font-style: italic;
+          margin-top: 14px;
+          margin-left: 10px;
+        }
+
+        .map {
+          right: 37px;
+          display: block;
+          background-image: url('../../assets/images/map.png');
+          height: 168px;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          width: 90%;
+          box-shadow: 0 10px 15px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.20);
+
+          margin: 0 auto;
+
+          @include susy-breakpoint($tablet) {
+            display: none;
+          }
+        }
+
+        .actions {
+          text-align: center;
+          width: 100%;
+          display: table;
+          position: relative;
+          height:100%;
+
+          @include susy-breakpoint($tablet) {
+
+            margin-left: 20px;
+            text-align: left;
+            width: auto;
+          }
+          .Button {
+            margin-top: 5px;
+            font-size: 16px;
+            padding: 12px 60px;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          .dont {
+            display: block;
+            cursor: pointer;
+            color: #2b007a;
+            font-size: 11px;
+            text-decoration: underline;
+            margin: 6px 0 12px;
+            text-align: center;
+            @include susy-breakpoint($tablet) {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

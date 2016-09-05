@@ -1,0 +1,30 @@
+@import "~susy/sass/susy";
+
+$large-desktop: 1401px;
+$desktop: 1025px;
+$tablet: 768px;
+
+$susy: (
+  columns                     : 12,
+  gutters                     : 0,
+  container                   : 90%,
+);
+
+// Base Colors
+$violet: #370084;
+$white: #ffffff;
+$grey: #c8ced5;
+
+$main_background: #c8ced5;
+
+// Header
+$header_background: #370084;
+$header_color: #ffffff;
+
+
+@import "./reset";
+@import "./fonts";
+@import "./grids";
+@import "./mixins";
+
+
