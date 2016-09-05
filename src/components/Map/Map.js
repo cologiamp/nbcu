@@ -6,7 +6,7 @@ var L = require('leaflet');
 //require('leaflet/dist/leaflet.css');
 
 // using webpack json loader we can import our geojson file like this
-var geojson = require('json!./usa_airports.json');
+var geojson = require('json!./usa_airports.geojson');
 
 /*
 var xmlhttp = new XMLHttpRequest();
