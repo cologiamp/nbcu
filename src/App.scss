@@ -1,0 +1,131 @@
+@import "./stylesheets/base";
+
+body {
+  padding-bottom: 6rem;
+  text-rendering: geometricPrecision;
+  background: $main_background;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+}
+
+.App {
+  text-align: center;
+  height: 100%;
+  .App-container {
+    @include container();
+    position: relative;
+    height: 100%;
+    max-width: 1169px;
+  }
+}
+
+.Item {
+  background: white;
+  color: #2e2e2e;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 0.2px;
+  font-weight: 500;
+
+  padding: 10px;
+
+  &:hover {
+    background: #efeff0;
+    cursor: pointer;
+  }
+
+  &.selected  {
+    background: #405a74;
+    color: black;
+  }
+
+  &.Topic, &.SocialChannel, &.Subtopic{
+    font-family: 'Open Sans';
+    font-weight: 500;
+    overflow: hidden;
+
+    font-size: .66em;
+    text-align: left;
+    font-weight: 500;
+    margin: 2px 0;
+    text-transform: uppercase;
+    line-height: 12px;
+    position: relative;
+    width: 100%;
+
+    @include susy-breakpoint($tablet) {
+      //margin: 1.5px 0;
+    }
+
+    @include susy-breakpoint($desktop) {
+
+    }
+
+    &:hover {
+      background: #efeff0;
+    }
+
+    .circle {
+      position: absolute;
+      border-radius: 30px;
+      width: 10px;
+      height: 10px;
+      background: white;
+      right: 10px;
+      top: 11px;
+    }
+
+    &:active, &.selected {
+      color: white;
+      background: #405a74;
+    }
+
+
+  }
+
+  &.SocialChannel .circle {
+    display: none;
+  }
+
+}
+
+.Topic-container {
+
+  .circle {
+    display: block;
+  }
+
+  $colors-list:
+          "#8c0095",
+          "#950069",
+          "#950038",
+          "#952700",
+          "#956200",
+          "#957700",
+          "#8c9500",
+          "#5b9500",
+          "#0e9500",
+          "#009585",
+          "#007b95",
+          "#005b95",
+          "#004695";
+
+
+
+  &:active .Topic, &.selected .Topic, .circle, .Subtopic.selected{
+    color: white;
+  }
+
+  @each $color in $colors-list {
+    $i: index($colors-list, $color);
+    &:nth-child(#{$i})  {
+      &:active .Topic, &.selected .Topic, .circle, .Subtopic.selected{
+        background: #{$color};
+      }
+    }
+  }
+
+}

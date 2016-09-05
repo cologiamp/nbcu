@@ -1,0 +1,346 @@
+@import "../../stylesheets/base";
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1002;
+
+    @include susy-breakpoint($tablet) {
+      z-index: 100;
+    }
+
+    .Overlay-box {
+      box-sizing: border-box;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.10), 0 1px 2px rgba(0, 0, 0, 0.50);
+      z-index: 10;
+      margin: auto;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      background: white;
+      padding-top: 30px;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+      height: auto;
+      width: 100%;
+      max-height: 440px;
+
+      @include susy-breakpoint($tablet) {
+        width: 530px;
+        max-height: 635px;
+      }
+
+
+      .Overlay-box-wrapper {
+        max-height: 410px;
+        overflow: auto;
+
+        @include susy-breakpoint($tablet) {
+          max-height: 605px;
+        }
+      }
+
+
+      .Overlay-header {
+
+        box-sizing: border-box;
+        margin: 0 auto;
+
+        .image-container {
+          overflow: hidden;
+          width: 100%;
+          height: 180px;
+          margin: 0 auto;
+          img {
+            width: 100%;
+            min-height: 180px;
+          }
+        }
+
+        @include susy-breakpoint($tablet) {
+          .image-container {
+            height: 300px;
+            img {
+              min-height: 300px;
+            }
+          }
+        }
+
+
+        margin-bottom: 23px;
+      }
+
+      .Overlay-profile {
+        position: relative;
+        display: block;
+        text-align: left;
+        box-sizing: border-box;
+        height: 90px;
+
+        .container {
+          /*background: blue;*/
+          margin-left: 90px;
+          height: 50px;
+          text-align: left;
+          box-sizing: border-box;
+          padding-top: 15px;
+          &.no-avatar {
+            margin-left: 29px;
+          };
+        }
+
+        .picture {
+          /*background: green;*/
+          background: #f7f9f9;
+          position: absolute;
+          left: 30px;
+          top: 15px;
+          width: 50px;
+          height: 50px;
+        }
+
+        .name {
+          color: #410095;
+          font-size: 17px;
+          font-weight: 600;
+          display: table-cell;
+          vertical-align: middle;
+          height: 50px;
+          a {
+            color: #410095;
+            text-decoration: none;
+             &:hover {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+
+
+        }
+
+        .user-name {
+          margin-top: 5px;
+          display: block;
+          font-size: 14px;
+          color: #969799;
+          font-weight: normal;
+
+          a {
+            color: #969799;
+            text-decoration: none;
+             &:hover {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .social-channel {
+          position: absolute;
+          top: 10px;
+          right: 35px;
+          width: 30px;
+          height: 30px;
+          background-size: 100%;
+          background-repeat: no-repeat;
+
+          &.facebook {
+            background-image: url('../../assets/images/facebook-feed.png');
+          }
+
+          &.twitter {
+            background-image: url('../../assets/images/twitter-feed.png');
+          }
+
+          &.googleplus {
+            background-color: #d1332a;
+            background-image: url('../../assets/images/google-feed.png');
+            background-position: 7px;
+            background-size: 18px;
+          }
+
+          &.instagram {
+            background-image: url('../../assets/images/instagram.png');
+          }
+
+          &.youtube {
+            background-image: url('../../assets/images/youtube.png');
+          }
+
+        }
+      }
+
+      .Overlay-content {
+        padding: 0 30px;
+        color: #000000;
+        text-align: left;
+        line-height: normal;
+        overflow: auto;
+        font-size: 13px;
+        p {
+          color: #000000;
+        }
+        h2 {
+          font-size: 15px;
+          margin-bottom: 10px;
+          a {
+            color: #360097;
+            font-weight: bold;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+        }
+        a {
+            color: #360097;
+            font-weight: bold;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+      }
+
+      @include susy-breakpoint($tablet) {
+        .Overlay-content {
+          
+        }
+      }
+
+      .Overlay-footer {
+        @include container();
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin-top: 30px;
+        padding: 10px 20px;
+        color: #777e83;
+        background: #f7f9f8;
+        text-align: left;
+        height: 51px;
+        border-top: solid 1px #dadedd;
+
+        color: #777e83;
+        background: #f7f9f9;
+        font-size: 13px;
+        // > div {
+        //   @include span(6);
+
+        //   &:nth-child(1) {
+        //     font-size: 11px;
+        //     text-align: left;
+        //     .published {
+        //       margin-bottom: 5px;
+        //     }
+        //   }
+
+        //   &:nth-child(2) {
+        //     @include last;
+        //     text-align: right;
+        //     span {
+        //       vertical-align: top;
+        //       line-height: 28px;
+        //     }
+        //   }
+
+        // }
+
+        .network a {
+          color: #360097;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .social {
+          display: inline;
+          margin-left: 10px;
+          vertical-align: middle;
+          li {
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            margin-right: 5px;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          .facebook {
+            background: #4652a4;
+            background-image: url('../../assets/images/facebook-feed.png');
+            background-size: 25px;
+          }
+          .twitter {
+            background-color: #34c0e4;
+            background-image: url('../../assets/images/twitter-feed.png');
+            background-size: 25px;
+          }
+          .google {
+            background-color: #d82126;
+            background-image: url('../../assets/images/google-feed.png');
+            background-position: 5px;
+            background-size: 17px;
+            background-repeat: no-repeat;
+          }
+        }
+
+      }
+
+      .button {
+        display: block;
+        width: 200px;
+        height: 40px;
+        background: white;
+      }
+
+      .cross {
+        width: 12px;
+        height: 12px;
+        background-image: url('../../assets/images/close.png');
+        background-size: 12px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+    }
+
+      visibility: hidden;
+      opacity: 0;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+
+      .Overlay-box {
+        -webkit-transform: translateY(-50%) scale(0.7);
+        -ms-transform: translateY(-50%) scale(0.7);
+        transform: translateY(-50%) scale(0.7);
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      &.active {
+        visibility: visible;
+        opacity: 1;
+        .Overlay-box {
+          -webkit-transform: translateY(-50%) scale(1);
+          -ms-transform: translateY(-50%) scale(1);
+          transform: translateY(-50%) scale(1);
+          opacity: 1;
+        }
+      }
+
+  }

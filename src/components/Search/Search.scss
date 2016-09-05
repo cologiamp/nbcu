@@ -1,0 +1,75 @@
+@import "../../stylesheets/base";
+
+.Search {
+  background: #eef3f5;
+  padding: 12px;
+  position: relative;
+  height: 72px;
+  z-index: -10;
+
+  .form-field {
+    &.right {
+      text-align: right;
+    }
+
+    input {
+      margin: 0 auto;
+      border: 0;
+      padding: 8px 12px;
+      width: 100%;
+      box-sizing: border-box;
+      outline: none;
+      border-radius: 0;
+      margin-bottom: 2px;
+      font-weight: 300;
+      font-size: 14px;
+    }
+
+    button {
+      margin-top: 2px;
+      display: inline-block;
+      border: none;
+      background: #410095;
+      color: white;
+      font-size: 14px;
+      padding: 9px 47px;
+      font-weight: 400;
+      position: absolute;
+      bottom: 10px;
+      right: 11px;
+      z-index: -1;
+
+      &:hover {
+        cursor: pointer;
+        background: #30006f;
+        color: #d5d1df;
+      }
+    }
+    
+    .typeahead-selector {
+      li {
+        background: white;
+        color: #666666;
+        text-decoration: none;
+        text-align: left;
+        font-size: 14px;
+        padding: 12px 12px;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.20);
+        &:hover {
+          background: #f3f6f7;
+          cursor: pointer;
+        }
+        a {
+          color: #666666;
+          text-decoration: none;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .location {
+    display: none;
+  }
+
+}
