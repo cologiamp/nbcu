@@ -17,6 +17,7 @@ import Footer from './components/Footer/Footer';
 import Overlay from './components/Overlay/Overlay';
 
 import { Chart } from './components/Chart/Chart';
+import MapTest from './components/Map/Map';
 
 import MainContainer from './components/Main/MainContainer';
 import { PanelContainer } from './components/Panel/PanelContainer';
@@ -219,15 +220,14 @@ class App extends Component {
 
     let scroll = Scroll.animateScroll;
     let hasContent;
-    let isNewContent;
 
     let updateFeed = (response) => {
 
       // Parse content
       response.map((item, i) => {
 
-        // Remove 404 images
         if ( item.images.length ) {
+
           var img = new Image();
           img.onerror = function () {
             item.images.splice(0, 1);
@@ -235,7 +235,6 @@ class App extends Component {
           img.src = item.images[0].url;         
         }
 
-        // Preg-match URLs/IDs
         item.content = item.content.replace(/(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim, '<a href="$1" target="_blank">$1</a>')
 
         if( item.channel == "twitter" ) {
@@ -263,10 +262,8 @@ class App extends Component {
 
       // Save Feed
       if ((queryObj).hasOwnProperty('from_id')) {
-
         this.updateAppState({
-          feed: [...this.state.feed, ...response],
-          isNewContent: "is-new"
+          feed: [...this.state.feed, ...response]
         });
       } else {
 
@@ -275,8 +272,7 @@ class App extends Component {
 
         this.updateAppState({
           feed: response,
-          hasContent: hasContent,
-          isNewContent: ""
+          hasContent: hasContent
         });
       }
     };
@@ -426,7 +422,6 @@ class App extends Component {
 
         <div className={`map ${state.mapAnimation} ${state.hasContent}`} style={{ left: this.state.chartOffsetLeft }}>
           <div className="map-wrapper">
-            <Chart />
           </div>
         </div>
 

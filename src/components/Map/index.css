@@ -1,0 +1,9 @@
+#root, #map, #mapUI {
+  width: 800px;
+  height: 350px;
+  background-color: #000;
+}
+
+.filterSubwayLines {
+  color: white;
+}
